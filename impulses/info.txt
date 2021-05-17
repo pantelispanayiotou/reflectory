@@ -1,0 +1,25 @@
+Bathroom: recorded in a tiled bathroom, which results in a brighter sounding reverb due to the lack of wood or fabric-covered walls.
+
+Closet: recorded in a small wooden closet. Muted, short tale with darker tone.
+
+Big closet: similar to the small closet, slightly larger tail.
+
+Big room: recorded in a spacious room with furnishings and carpeted floor for a darker tone and longer tail.
+
+Bin: recorded in a small recycling bin, very interesting tone with longer predelay.
+
+Castle open room: recorded in a castle room with stone walls which do not absorb reflections.
+
+Castle room: similar to castle open room but smaller tail.
+
+Castle stairwell: recorded in a castle stairwell, longer tail and brighter sound than the castle rooms.
+
+Dungeon: low ceiling dungeon with open entrance - darker tone and short tail.
+
+Small room: recorded in a small bedroom with furnishings, curtains and carpeted floor. short tail, dark tone.
+
+Metallic room: small room with no furnishings. similar tail to small room but much brighter tone.
+
+Tunnel: recorded in a 1-mile stone tunnel with high ceiling. Long tail and dark tone.
+
+Wooden box: big wooden box attached to the bottom of a bed. bright tone, short tail.
