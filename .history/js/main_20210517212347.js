@@ -1,5 +1,4 @@
 import { segments } from './impulses.js';
-console.log(segments);
 // Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
 var Dolby = Dolby || {};
 !(function () {
