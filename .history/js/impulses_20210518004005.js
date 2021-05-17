@@ -1,5 +1,5 @@
 import { loadAudio, loadConvolver } from './common.js';
-export const impulses = ["bathroom.wav", "closet.wav", "big_closet.wav", "big_room.wav", "bin.wav", "castle_open_room.wav", "castle_room.wav", "castle_stairwell.wav", "dungeon.wav", "small_room.wav", "metallic_room.wav", "tunnel.wav", "wooden_room.wav"];
+export const impulses = ["bathroom.wav", "closet.wav", "big_closet.wav", "big_room.wav", "bin.wav", "castle_open_room.wav", "castle_room.wav", "castle_stairwell.wav", "dungeon.wav", "small_room.wav", "metallic_room.wav", "tunnel.wav", "wooden_box.wav"];
 export const segments = [];
 impulses.map((impulse, i) => {
   

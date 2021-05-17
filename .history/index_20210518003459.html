@@ -175,6 +175,7 @@
                 return response.text();
             })
             .then((page) => {
+                console.log(page);
                 $(div_name).html(page);
             })
         }

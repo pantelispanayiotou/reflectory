@@ -111,11 +111,12 @@
                     id="impulse-responses"
                 >
                 </div>
-                <div role="tabpanel" class="tab-pane" id="impulse-responses-pro">
-                </div>
             </div>
           </div>
-          
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane" id="impulse-responses-pro">
+            </div>
+          </div>
          
       </div>
     </section>
@@ -168,19 +169,7 @@
         </span>
       </div>
     </section>
-    <script>
-        const loadPart = (div_name, site_name) => {
-        fetch(site_name)
-            .then((response) => {
-                return response.text();
-            })
-            .then((page) => {
-                $(div_name).html(page);
-            })
-        }
-        loadPart('#impulse-responses', './impulses.html')
-        loadPart('#impulse-responses-pro', './impulses-plus.html');
-    </script>
+
     <script src="./Pizzicato.js"></script>
     <script src="js/vendor/prism.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -192,7 +181,20 @@
     <script type="module" src="js/main.js"></script>
     <script src="js/player.js"></script>
     <script type="module" src="js/impulses.js"></script>
-    
+    <script>
+        const loadPart = (div_name, site_name) => {
+        fetch(site_name)
+            .then((response) => {
+                return response.text();
+            })
+            .then((page) => {
+                console.log(page);
+                $(div_name).html(page);
+            })
+        }
+        loadPart('#impulse-responses', './impulses.html')
+        loadPart('#impulse-responses-pro', './impulses-plus.html');
+    </script>
 
   </body>
 </html>
