@@ -1,4 +1,3 @@
-import { segments } from './impulses.js';
 // Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
 var Dolby = Dolby || {};
 !(function () {
@@ -263,7 +262,26 @@ var countdown = new Pz.Sound(
   }
 );
 
-
+const impulse_root = "./impulses/";
+const loadAudio = (path_name) => {
+  const audio = new Pz.Sound(
+    {
+      source: "file",
+      options: {
+        path: "./audio/drums.mp3",
+        loop: true,
+      },
+    },
+    function () {
+      const convolver = loadConvolver(path_name);
+      audio.addEffect(convolver);
+    }
+  );
+  return audio;
+};
+const loadConvolver = (path_name) => {
+  return new Pz.Effects.Convolver({ impulse: impulse_root + path_name });
+};
 
 
 for (var i = 0; i < segments.length; i++) {
