@@ -4,7 +4,7 @@ export const loadAudio = (path_name) => {
     {
       source: "file",
       options: {
-        path: "./audio/drums.mp3",
+        path: "./audio/audio_example.wav",
         loop: true,
       },
     },
@@ -15,6 +15,6 @@ export const loadAudio = (path_name) => {
   );
   return audio;
 };
-const loadConvolver = (path_name) => {
+export const loadConvolver = (path_name) => {
   return new Pz.Effects.Convolver({ impulse: impulse_root + path_name });
 };

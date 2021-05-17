@@ -4,7 +4,7 @@ export const loadAudio = (path_name) => {
     {
       source: "file",
       options: {
-        path: "./audio/drums.mp3",
+        path: "./audio/audio_example.wav",
         loop: true,
       },
     },

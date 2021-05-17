@@ -5,9 +5,9 @@ impulses.map((impulse, i) => {
   
     let imp = {
         audio: loadAudio(impulse),
-        playButton: document.getElementById('play-' + i),
-        stopButton: document.getElementById('stop-' +i),
-        volumeSlider: document.getElementById('volume-' + i),
+        playButton: document.getElementById('play-'+ i),
+        stopButton: document.getElementById('stop-'+i),
+        volumeSlider: document.getElementById('volume-'+ i),
         effects: [
             {
                 instance: loadConvolver(impulse),
@@ -20,7 +20,6 @@ impulses.map((impulse, i) => {
     segments.push(imp);
 })
 
-console.log(segments);
 
 // export const segments = [
 //   {
