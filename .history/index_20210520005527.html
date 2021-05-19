@@ -110,6 +110,8 @@
                     class="tab-pane active"
                     id="impulse-responses"
                 >
+                <div data-include="impulses"></div>
+
                 </div>
                 <div role="tabpanel" class="tab-pane" id="impulse-responses-pro">
                 </div>
@@ -174,17 +176,24 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
-      const loadPart = (div_name, site_name) => {
-      fetch(site_name)
-          .then((response) => {
-              return response.text();
-          })
-          .then((page) => {
-              $(div_name).html(page);
-          })
-      }
-      loadPart('#impulse-responses', './impulses.html')
-      loadPart('#impulse-responses-pro', './impulses-plus.html');
+      $(function () {
+        var includes = $('[data-include]')
+        $.each(includes, function () {
+          var file = './' + $(this).data('include') + '.html'
+          $(this).load(file)
+        })
+    })
+      // const loadPart = (div_name, site_name) => {
+      // fetch(site_name)
+      //     .then((response) => {
+      //         return response.text();
+      //     })
+      //     .then((page) => {
+      //         $(div_name).html(page);
+      //     })
+      // }
+      // loadPart('#impulse-responses', './impulses.html')
+      // loadPart('#impulse-responses-pro', './impulses-plus.html');
   </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.3.0/nouislider.min.js"></script>
