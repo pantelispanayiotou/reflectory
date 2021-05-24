@@ -54,7 +54,7 @@ const shapeObject = (root_path, files, selector) => {
             effects: [{
                 instance: convolver,
                 parameters: {
-                    mix: document.getElementById(selector + "-mix-" + i),
+                    mix: document.getElementById(selector - "-mix-" + i),
                 },
             }, ],
         };

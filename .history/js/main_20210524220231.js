@@ -94,6 +94,6 @@ const loadListeners = (segments) => {
         })(segments[i]);
     }
 }
-
+console.log(segments_imp)
 loadListeners(segments_imp);
-loadListeners(segments_imp_pro);
+// loadListeners(segments_imp_pro);

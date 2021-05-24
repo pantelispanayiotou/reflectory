@@ -1,6 +1,4 @@
 import { segments_imp, segments_imp_pro } from './impulses.js';
-
-
 // Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
 var Dolby = Dolby || {};
 ! function() {
@@ -11,6 +9,7 @@ var Dolby = Dolby || {};
 }();
 var dolbySupported = Dolby.checkDDPlus();
 
+loadListeners(segments_imp);
 
 
 const loadListeners = (segments) => {
@@ -41,7 +40,7 @@ const loadListeners = (segments) => {
                     .addClass("ion-ios-play");
                 segment.playButton.classList.remove("pause");
             });
-
+            console.log(segment.playButton);
             segment.playButton.addEventListener('click', function(e) {
                 if (segment.playButton.classList.contains('pause'))
                     segment.audio.pause();
@@ -77,7 +76,7 @@ const loadListeners = (segments) => {
 
             for (var i = 0; i < segment.effects.length; i++) {
                 var effect = segment.effects[i];
-                console.log(effect);
+
                 for (var key in effect.parameters) {
                     (function(key, slider, instance) {
 
@@ -94,6 +93,3 @@ const loadListeners = (segments) => {
         })(segments[i]);
     }
 }
-
-loadListeners(segments_imp);
-loadListeners(segments_imp_pro);

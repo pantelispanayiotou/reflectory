@@ -27,9 +27,9 @@ const appendElement = (idToSelect, files, idToAppend, selector) => {
         item.find(".album__description").text(files[i].description);
         item.find(".play-button").attr("id", selector + "-play-" + i);
         item.find(".stop-button").attr("id", selector + "-stop-" + i);
-        item.find(".effects-button").attr("data-target", `#${selector}-effects-${i}`);
-        item.find(".effects-button").attr("aria-controls", `${selector}-effects-${i}`);
-        item.find(".collapse-panel").attr("id", selector + "-effects-" + i);
+        item.find(".effects-button").attr("data-target", "#effects" + i + "-" + selector);
+        item.find(".effects-button").attr("aria-controls", selector + "-effects" + i);
+        item.find(".collapse-panel").attr("id", selector + "-effects" + i);
         item.find(".volume-slider").attr("id", selector + "-volume-" + i);
         item.find(".mix-slider").attr("id", selector + "-mix-" + i);
         item.find(".volume-label").attr("for", selector + "-volume-" + i);
@@ -40,7 +40,6 @@ const appendElement = (idToSelect, files, idToAppend, selector) => {
 }
 appendElement('#template1', impulses, '#impulse-responses', 'n');
 appendElement('#template2', impulses_pro, '#impulse-responses-pro', 'p');
-
 const shapeObject = (root_path, files, selector) => {
     const array = new Array();
     files.map((impulse, i) => {
@@ -54,7 +53,7 @@ const shapeObject = (root_path, files, selector) => {
             effects: [{
                 instance: convolver,
                 parameters: {
-                    mix: document.getElementById(selector + "-mix-" + i),
+                    mix: document.getElementById(selector - "-mix-" + i),
                 },
             }, ],
         };

@@ -1,5 +1,7 @@
-import { segments_imp, segments_imp_pro } from './impulses.js';
-
+// import { segments_imp, segments_imp_pro } from './impulses.js';
+import impulses from './impulse_files.js';
+import impulses_pro from './impulse_pro_files.js';
+import { appendElements } from './impulses.js';
 
 // Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
 var Dolby = Dolby || {};
@@ -11,7 +13,7 @@ var Dolby = Dolby || {};
 }();
 var dolbySupported = Dolby.checkDDPlus();
 
-
+appendElements('#impulse_responses', impulses, '#template1');
 
 const loadListeners = (segments) => {
     for (let i = 0; i < segments.length; i++) {
@@ -77,7 +79,7 @@ const loadListeners = (segments) => {
 
             for (var i = 0; i < segment.effects.length; i++) {
                 var effect = segment.effects[i];
-                console.log(effect);
+
                 for (var key in effect.parameters) {
                     (function(key, slider, instance) {
 
@@ -96,4 +98,3 @@ const loadListeners = (segments) => {
 }
 
 loadListeners(segments_imp);
-loadListeners(segments_imp_pro);

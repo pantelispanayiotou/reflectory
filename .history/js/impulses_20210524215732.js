@@ -40,7 +40,6 @@ const appendElement = (idToSelect, files, idToAppend, selector) => {
 }
 appendElement('#template1', impulses, '#impulse-responses', 'n');
 appendElement('#template2', impulses_pro, '#impulse-responses-pro', 'p');
-
 const shapeObject = (root_path, files, selector) => {
     const array = new Array();
     files.map((impulse, i) => {
@@ -54,7 +53,7 @@ const shapeObject = (root_path, files, selector) => {
             effects: [{
                 instance: convolver,
                 parameters: {
-                    mix: document.getElementById(selector + "-mix-" + i),
+                    mix: document.getElementById(selector - "-mix-" + i),
                 },
             }, ],
         };

@@ -77,10 +77,10 @@ const loadListeners = (segments) => {
 
             for (var i = 0; i < segment.effects.length; i++) {
                 var effect = segment.effects[i];
-                console.log(effect);
+
                 for (var key in effect.parameters) {
                     (function(key, slider, instance) {
-
+                        console.log(slider);
                         var display = slider.parentNode.getElementsByClassName('slider-value')[0];
 
                         slider.addEventListener('input', function(e) {
@@ -95,5 +95,5 @@ const loadListeners = (segments) => {
     }
 }
 
-loadListeners(segments_imp);
+// loadListeners(segments_imp);
 loadListeners(segments_imp_pro);

@@ -1,5 +1,6 @@
-import { segments_imp, segments_imp_pro } from './impulses.js';
-
+// import { segments_imp, segments_imp_pro } from './impulses.js';
+import impulses from './impulse_files.js';
+import impulses_pro from './impulse_pro_files.js';
 
 // Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
 var Dolby = Dolby || {};
@@ -11,6 +12,23 @@ var Dolby = Dolby || {};
 }();
 var dolbySupported = Dolby.checkDDPlus();
 
+const template = $('#template1').html();
+for (let i = 0; i < impulses.length; i++) {
+    var item = $(template).clone();
+    item.find(".album__name").text(impulses[i].title);
+    item.find(".album__description").text(impulses[i].description);
+    item.find(".play-button").attr("id", "play-" + i);
+    item.find(".stop-button").attr("id", "stop-" + i);
+    item.find(".effects-button").attr("data-target", "#effects" + i);
+    item.find(".effects-button").attr("aria-controls", "effects" + i);
+    item.find(".collapse-panel").attr("id", "effects" + i);
+    item.find(".volume-slider").attr("id", "volume-" + i);
+    item.find(".mix-slider").attr("id", "mix-" + i);
+    item.find(".volume-label").attr("for", "volume-" + i);
+    item.find(".mix-label").attr("for", "mix-" + i);
+    //Append to the source
+    $('#impulse_responses').append(item);
+}
 
 
 const loadListeners = (segments) => {
@@ -77,7 +95,7 @@ const loadListeners = (segments) => {
 
             for (var i = 0; i < segment.effects.length; i++) {
                 var effect = segment.effects[i];
-                console.log(effect);
+
                 for (var key in effect.parameters) {
                     (function(key, slider, instance) {
 
@@ -95,5 +113,4 @@ const loadListeners = (segments) => {
     }
 }
 
-loadListeners(segments_imp);
-loadListeners(segments_imp_pro);
+// loadListeners(segments_imp);

@@ -77,7 +77,7 @@ const loadListeners = (segments) => {
 
             for (var i = 0; i < segment.effects.length; i++) {
                 var effect = segment.effects[i];
-                console.log(effect);
+
                 for (var key in effect.parameters) {
                     (function(key, slider, instance) {
 
@@ -95,5 +95,6 @@ const loadListeners = (segments) => {
     }
 }
 
-loadListeners(segments_imp);
+// loadListeners(segments_imp);
 loadListeners(segments_imp_pro);
+console.log(segments_imp_pro);
