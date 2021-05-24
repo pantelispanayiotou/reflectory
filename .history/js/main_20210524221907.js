@@ -11,6 +11,16 @@ var Dolby = Dolby || {};
 }();
 var dolbySupported = Dolby.checkDDPlus();
 
+function handleFiles(event) {
+    var files = event.target.files;
+    let impulse = URL.createObjectURL(files[0]);
+    let acousticGuitar = new Pizzicato.Sound(impulse, function() {
+        // Sound loaded!
+        acousticGuitar.play();
+    });
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
 
 
 const loadListeners = (segments) => {

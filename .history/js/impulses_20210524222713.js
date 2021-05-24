@@ -1,6 +1,5 @@
 import impulses from './impulse_files.js';
 import impulses_pro from './impulse_pro_files.js';
-import { loadListeners } from './custom-audio.js';
 const loadAudio = (path_name, convolver) => {
     const audio = new Pz.Sound({
             source: "file",
@@ -45,8 +44,8 @@ appendElement('#template2', impulses_pro, '#impulse-responses-pro', 'p');
 const shapeObject = (root_path, files, selector) => {
     const array = new Array();
     files.map((impulse, i) => {
-        let convolver;
-        let audio;
+        const convolver;
+        const audio;
         if (selector !== 'c') {
             convolver = loadConvolver(root_path, impulse.track);
 
@@ -66,7 +65,6 @@ const shapeObject = (root_path, files, selector) => {
                 },
             }, ],
         };
-
         array.push(imp);
     })
 
@@ -76,10 +74,8 @@ const shapeObject = (root_path, files, selector) => {
 function handleFiles(event) {
     var files = event.target.files;
     let impulse = URL.createObjectURL(files[0]);
-
-    const custom = shapeObject('', [impulse], 'c');
+    export const custom = shapeObject('', [impulse], 'c');
     console.log(custom);
-    loadListeners(custom);
 }
 
 document.getElementById("upload").addEventListener("change", handleFiles, false);

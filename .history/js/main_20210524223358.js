@@ -13,7 +13,7 @@ var dolbySupported = Dolby.checkDDPlus();
 
 
 
-const loadListeners = (segments) => {
+export const loadListeners = (segments) => {
     for (let i = 0; i < segments.length; i++) {
         (function(segment) {
 

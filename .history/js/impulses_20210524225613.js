@@ -52,6 +52,7 @@ const shapeObject = (root_path, files, selector) => {
 
         } else {
             convolver = new Pz.Effects.Convolver({ impulse: files[0] });
+            console.log(convolver);
         }
         audio = loadAudio("./audio/drums.mp3", convolver);
         let imp = {
@@ -76,9 +77,9 @@ const shapeObject = (root_path, files, selector) => {
 function handleFiles(event) {
     var files = event.target.files;
     let impulse = URL.createObjectURL(files[0]);
-
+    console.log(files);
+    console.log(impulse);
     const custom = shapeObject('', [impulse], 'c');
-    console.log(custom);
     loadListeners(custom);
 }
 

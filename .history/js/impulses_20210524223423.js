@@ -1,6 +1,6 @@
 import impulses from './impulse_files.js';
 import impulses_pro from './impulse_pro_files.js';
-import { loadListeners } from './custom-audio.js';
+import { loadListeners } from './main.js';
 const loadAudio = (path_name, convolver) => {
     const audio = new Pz.Sound({
             source: "file",
@@ -66,7 +66,7 @@ const shapeObject = (root_path, files, selector) => {
                 },
             }, ],
         };
-
+        console.log(imp);
         array.push(imp);
     })
 
@@ -76,9 +76,7 @@ const shapeObject = (root_path, files, selector) => {
 function handleFiles(event) {
     var files = event.target.files;
     let impulse = URL.createObjectURL(files[0]);
-
     const custom = shapeObject('', [impulse], 'c');
-    console.log(custom);
     loadListeners(custom);
 }
 

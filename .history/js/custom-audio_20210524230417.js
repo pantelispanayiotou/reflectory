@@ -1,19 +1,4 @@
-import { segments_imp, segments_imp_pro } from './impulses.js';
-
-
-// Dolby format detection - taken from https://s3-us-west-1.amazonaws.com/dolbydeveloper/1.1.0/js/dolby.min.js
-var Dolby = Dolby || {};
-! function() {
-    "use strict";
-    Dolby.supportDDPlus = !1;
-    var e = new Audio;
-    "" != e.canPlayType('audio/mp4;codecs="ec-3"') && (-1 == navigator.userAgent.indexOf("CPU iPhone OS 9_3") && -1 == navigator.userAgent.indexOf("CPU OS 9_3") || -1 == navigator.userAgent.indexOf("Safari") || -1 == navigator.userAgent.indexOf("Version/9") || (Dolby.supportDDPlus = !0), -1 != navigator.userAgent.indexOf("Mac OS X 10_1") && -1 != navigator.userAgent.indexOf("Safari") && -1 != navigator.userAgent.indexOf("Version/9") && (Dolby.supportDDPlus = !0), -1 != navigator.userAgent.indexOf("Edge") && (Dolby.supportDDPlus = !0), -1 != navigator.userAgent.indexOf("Windows Phone 10") && (Dolby.supportDDPlus = !1)), Dolby.checkDDPlus = function() { return Dolby.supportDDPlus }
-}();
-var dolbySupported = Dolby.checkDDPlus();
-
-
-
-const loadListeners = (segments) => {
+export const loadListeners = (segments) => {
     for (let i = 0; i < segments.length; i++) {
         (function(segment) {
 
@@ -51,9 +36,11 @@ const loadListeners = (segments) => {
 
             segment.stopButton.addEventListener('click', function(e) {
                 segment.audio.stop();
+                segment.audio.empty();
             });
 
             segment.volumeSlider.addEventListener('input', function(e) {
+                console.log(segment.volumeSlider);
                 var volumeDisplay = segment.volumeSlider.parentNode.getElementsByClassName('slider-value')[0];
                 volumeDisplay.innerHTML = segment.audio.volume = e.target.valueAsNumber;
             });
@@ -93,6 +80,3 @@ const loadListeners = (segments) => {
         })(segments[i]);
     }
 }
-
-loadListeners(segments_imp);
-loadListeners(segments_imp_pro);

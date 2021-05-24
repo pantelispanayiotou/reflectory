@@ -11,6 +11,13 @@ var Dolby = Dolby || {};
 }();
 var dolbySupported = Dolby.checkDDPlus();
 
+function handleFiles(event) {
+    var files = event.target.files;
+    let test = URL.createObjectURL(files[0]);
+    console.log(test);
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
 
 
 const loadListeners = (segments) => {
