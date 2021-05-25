@@ -24,7 +24,7 @@ const appendElement = (idToSelect, files, idToAppend, selector) => {
     for (let i = 0; i < files.length; i++) {
         const template = $(idToSelect).html();
         var item = $(template).clone();
-        item.find('.download').attr('href', 'https://alvinos-zavlis.netlify.app/' + ((selector === 'n') ? 'impulses/' : 'impulses_pro/') + files[0].track)
+        item.find('.download').attr('href', 'https://alvinos-zavlis.netlify.app/impulses/' + files[0].track)
         item.find(".album__name").text(files[i].title);
         item.find(".album__description").text(files[i].description);
         item.find(".play-button").attr("id", selector + "-play-" + i);
