@@ -42,8 +42,7 @@ const appendElement = (idToSelect, files, idToAppend, selector) => {
 appendElement('#template1', impulses, '#impulse-responses', 'n');
 appendElement('#template2', impulses_pro, '#impulse-responses-pro', 'p');
 
-const shapeObject = (root_path, files, selector, audioFile) => {
-
+const shapeObject = (root_path, files, selector) => {
     const array = new Array();
     files.map((impulse, i) => {
         let convolver;
@@ -54,7 +53,7 @@ const shapeObject = (root_path, files, selector, audioFile) => {
 
         } else {
             convolver = new Pz.Effects.Convolver({ impulse: files[0] });
-            audio = loadAudio(audioFile, convolver);
+            audio = loadAudio()
         }
 
         let imp = {
@@ -76,17 +75,23 @@ const shapeObject = (root_path, files, selector, audioFile) => {
     return array;
 }
 
+// function handleFiles(event) {
+//     var files = event.target.files;
+//     let impulse = URL.createObjectURL(files[0]);
 
-$(document).ready(function() {
-    $('#uploadFiles').on('change', function(event) {
-        var files = event.target.files;
-        var audioFile = URL.createObjectURL(files[0]);
-        var impulse = URL.createObjectURL(files[1]);
-        let custom = shapeObject('', [impulse], 'c', audioFile)
-        loadListeners(custom);
-    })
-})
+//     const custom = shapeObject('', [impulse], 'c',);
+//     console.log(custom);
+//     loadListeners(custom);
+// }
 
+// document.getElementById("upload1").addEventListener("change", handleFiles, false);
+
+window.onload = function() {
+    console.log($('#test'))
+    $('#test').onclick = function() {
+        console.log('hey');
+    }
+}
 
 export const segments_imp = shapeObject('./impulses/', impulses, 'n');
 export const segments_imp_pro = shapeObject('./impulses_pro/', impulses_pro, 'p');

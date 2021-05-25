@@ -94,9 +94,9 @@
                     margin-top: 20px;
                     margin-bottom: 20px;
                   ">
-                                <form action="#">
-                                    <input id="uploadFiles" type="file" multiple="multiple" />
-                                </form>
+                                <input type="file" id="upload1" />
+                                <input type="file" id="upload2" />
+                                <button onclick="testing()"></button>
                                 <button id="c-play-0" class="button-dark play">
                     <i class="ion-ios-play"></i>
                   </button>
@@ -291,12 +291,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.3.0/nouislider.min.js"></script>
-    <script src="./js/jQuery.FileDrop.js"></script>
     <script src="https://buttons.github.io/buttons.js"></script>
     <script type="module" src="js/impulses.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/player.js"></script>
+    <script>
+        $(document).ready((function() {
+            $('#demo_1_dry').on('click', function() {
 
+                let audio = new Audio('./demos/demo_1_dry.wav');
+                audio.play();
+            });
+        }))
+    </script>
 </body>
 
 </html>

@@ -54,7 +54,7 @@ const shapeObject = (root_path, files, selector, audioFile) => {
 
         } else {
             convolver = new Pz.Effects.Convolver({ impulse: files[0] });
-            audio = loadAudio(audioFile, convolver);
+            audio = loadAudio('./audio/audio_example.wav', convolver);
         }
 
         let imp = {
@@ -76,14 +76,24 @@ const shapeObject = (root_path, files, selector, audioFile) => {
     return array;
 }
 
+// function handleFiles(event) {
+//     var files = event.target.files;
+//     let impulse = URL.createObjectURL(files[0]);
+
+//     const custom = shapeObject('', [impulse], 'c',);
+//     console.log(custom);
+//     loadListeners(custom);
+// }
+
+// document.getElementById("upload1").addEventListener("change", handleFiles, false);
 
 $(document).ready(function() {
     $('#uploadFiles').on('change', function(event) {
         var files = event.target.files;
-        var audioFile = URL.createObjectURL(files[0]);
-        var impulse = URL.createObjectURL(files[1]);
+        var audioFile = new Audio(files[0]);
+        var impulse = new Audio(files[1]);
         let custom = shapeObject('', [impulse], 'c', audioFile)
-        loadListeners(custom);
+        console.log(custom);
     })
 })
 

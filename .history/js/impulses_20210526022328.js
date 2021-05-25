@@ -2,6 +2,7 @@ import impulses from './impulse_files.js';
 import impulses_pro from './impulse_pro_files.js';
 import { loadListeners } from './custom-audio.js';
 const loadAudio = (path_name, convolver) => {
+    console.log(path_name);
     const audio = new Pz.Sound({
             source: "file",
             options: {
@@ -43,7 +44,6 @@ appendElement('#template1', impulses, '#impulse-responses', 'n');
 appendElement('#template2', impulses_pro, '#impulse-responses-pro', 'p');
 
 const shapeObject = (root_path, files, selector, audioFile) => {
-
     const array = new Array();
     files.map((impulse, i) => {
         let convolver;
@@ -76,14 +76,24 @@ const shapeObject = (root_path, files, selector, audioFile) => {
     return array;
 }
 
+// function handleFiles(event) {
+//     var files = event.target.files;
+//     let impulse = URL.createObjectURL(files[0]);
+
+//     const custom = shapeObject('', [impulse], 'c',);
+//     console.log(custom);
+//     loadListeners(custom);
+// }
+
+// document.getElementById("upload1").addEventListener("change", handleFiles, false);
 
 $(document).ready(function() {
     $('#uploadFiles').on('change', function(event) {
         var files = event.target.files;
-        var audioFile = URL.createObjectURL(files[0]);
-        var impulse = URL.createObjectURL(files[1]);
-        let custom = shapeObject('', [impulse], 'c', audioFile)
-        loadListeners(custom);
+        var audioFile = new Audio(files[0]);
+        var impulse = new Audio(files[1]);
+        let custom = shapeObject('', [impulse], 'c', files[0])
+        console.log(custom);
     })
 })
 
