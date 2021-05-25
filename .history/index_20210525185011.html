@@ -46,6 +46,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="artist__listeners">
+                        <div class="artist__listeners__count">15,662,810</div>
+
+                        <div class="artist__listeners__label">Monthly Listeners</div>
+                    </div>
+
                     <div class="artist__navigation">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="active" role="presentation">
@@ -82,60 +89,42 @@
                 role="tabpanel"
                 class="tab-pane active"
                 id="impulse-responses"
-              ></div>
-
+              >
+              </div>
+               
               <div
                 role="tabpanel"
                 class="tab-pane"
                 id="impulse-responses-pro"
               ></div>
-              <div role="tabpanel" class="tab-pane" id="custom">
-                <div
-                  style="
-                    margin: 0 auto;
-                    justify-content: center;
-                    display: flex;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                  "
-                >
-                  <input type="file" id="upload" />
-                  <button id="c-play-0" class="button-dark play">
-                    <i class="ion-ios-play"></i>
-                  </button>
-                  <button id="c-stop-0" class="button-light">Stop</button>
-                </div>
-                <div class="album__actions">
-                  <div class="slider-group">
-                    <div class="slider">
-                      <label for="c-volume-0">Volume</label>
-                      <input
-                        id="c-volume-0"
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="1"
-                        class="volume-slider"
-                      />
-                      <div class="slider-value">1</div>
-                    </div>
-                    <div class="slider">
-                      <label for="c-mix-0" class="mix-label">Dry/Wet</label>
-                      <input
-                        id="c-mix-0"
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.5"
-                        class="mix-slider"
-                      />
-                      <div class="slider-value">0.5</div>
-                    </div>
+              <div
+                role="tabpanel"
+                class="tab-pane"
+                id="custom"
+              >
+              <input type="file" id="upload" />
+              <div class="album__actions">
+                <button id="c-play-0" class="button-dark play ">
+                      <i class="ion-ios-play"></i>
+                    </button>
+                <button id="c-stop-0" class="button-light ">
+                      Stop
+                    </button>
+                    <div class="slider-group">
+                      <div class="slider">
+                          <label for="c-volume-0">Volume</label>
+                          <input id="c-volume-0" type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
+                          <div class="slider-value">1</div>
+                      </div>
+                      <div class="slider">
+                          <label for="c-mix-0" class="mix-label">Dry/Wet</label>
+                          <input id="c-mix-0" type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider">
+                          <div class="slider-value">0.5</div>
+                      </div>
                   </div>
-                </div>
-              </div>
+              
+            </div>
+            </div>
             </div>
           </div>
         </div>
@@ -194,7 +183,47 @@
         <div class="album">
             <div class="album__info">
                 <div class="album__info__art">
-                    <img src="./img/impulses.jpeg">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg" alt="When It's Dark Out">
+                </div>
+                <div class="album__info__meta">
+                    <div class="album__name">Bathroom</div>
+                    <p class="album__description">
+                    </p>
+                    <div class="album__actions">
+                        <button class="button-dark play play-button">
+                              <i class="ion-ios-play"></i>
+                            </button>
+                        <button class="button-light stop-button">
+                              Stop
+                            </button>
+                        <button type="button" data-toggle="collapse" aria-expanded="false" class="button-light effects effects-button">
+                              EFFECTS
+                            </button>
+                    </div>
+                </div>
+                <div class="collapse collapse-panel" aria-expanded="true">
+                    <div class="slider-group">
+                        <div class="slider">
+                            <label class="volume-label">Volume</label>
+                            <input type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
+                            <div class="slider-value">1</div>
+                        </div>
+                        <div class="slider">
+                            <label class="mix-label">Dry/Wet</label>
+                            <input type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider">
+                            <div class="slider-value">0.5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr /> `
+    </script>
+    <script type="text/x-custom-template" id="template2">
+        <div class="album">
+            <div class="album__info">
+                <div class="album__info__art">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg" alt="When It's Dark Out">
                 </div>
                 <div class="album__info__meta">
                     <div class="album__name">Bathroom</div>
@@ -230,46 +259,6 @@
         </div>
         <hr /> `
     </script>
-    <script type="text/x-custom-template" id="template2">
-        <div class="album">
-            <div class="album__info">
-                <div class="album__info__art">
-                    <img src="./img/unorthodox.jpeg" alt="When It's Dark Out">
-                </div>
-                <div class="album__info__meta">
-                    <div class="album__name">Bathroom</div>
-                    <p class="album__description">
-                    </p>
-                    <div class="album__actions">
-                        <button class="button-dark play play-button">
-                          <i class="ion-ios-play"></i>
-                        </button>
-                        <button class="button-light stop-button">
-                          Stop
-                        </button>
-                        <button type="button" data-toggle="collapse" aria-expanded="false" class="button-light effects effects-button">
-                          EFFECTS
-                        </button>
-                    </div>
-                </div>
-                <div class="collapse collapse-panel" aria-expanded="true">
-                    <div class="slider-group">
-                        <div class="slider">
-                            <label class="volume-label">Volume</label>
-                            <input type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
-                            <div class="slider-value">1</div>
-                        </div>
-                        <div class="slider">
-                            <label class="mix-label">Dry/Wet</label>
-                            <input type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider">
-                            <div class="slider-value">0.5</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr /> `
-    </script>
     <script src="./Pizzicato.js"></script>
     <script src="js/vendor/prism.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -280,6 +269,7 @@
     <script type="module" src="js/impulses.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/player.js"></script>
+
 </body>
 
 </html>

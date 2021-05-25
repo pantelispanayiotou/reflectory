@@ -530,7 +530,7 @@ body a:hover {
     height: 400px;
     border-bottom: 1px solid #282828;
     position: relative;
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/spotify_img_bground.png);
+    background-image: url('../img/background.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -552,7 +552,7 @@ body a:hover {
     height: 100%;
     z-index: 0;
     opacity: 0.15;
-    background-image: url('../img/background.jpeg');
+    background-image: url('../img/alvinos_cover.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
