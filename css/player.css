@@ -835,7 +835,7 @@ body a:hover {
 }
 
 .tracks__heading__number {
-    margin-left: 10px;
+    margin-left: 80px;
     font-style: italic;
 }
 
@@ -879,7 +879,7 @@ body a:hover {
 }
 
 .tracks .track__number {
-    margin-left: 10px;
+    margin-left: 80px;
     color: #aaaaaa;
     width: 12px;
 }

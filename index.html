@@ -28,7 +28,7 @@
                 <div class="artist__header">
                     <div class="artist__info">
                         <div class="profile__img">
-                            <img src="./img/profile.jpeg" alt="Alvinos" />
+                            <img src="./img/unorthodox.jpeg" alt="Alvinos" />
                         </div>
 
                         <div class="artist__info__meta">
@@ -48,11 +48,12 @@
                     </div>
                     <div class="artist__navigation">
                         <ul class="nav nav-tabs" role="tablist">
+
                             <li class="active" role="presentation">
                                 <a href="#impulse-responses" aria-controls="impulse-responses" role="tab" data-toggle="tab">Impulse Responses</a
                   >
                 </li>
-
+                
                 <li role="presentation">
                   <a
                     href="#impulse-responses-pro"
@@ -72,99 +73,110 @@
                     >Custom</a
                   >
                 </li>
-              </ul>
-            </div>
-          </div>
+                <li  role="presentation">
+                  <a href="#samples" aria-controls="samples" role="tab" data-toggle="tab">Demos</a
+>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-          <div class="artist__content">
-            <div class="tab-content">
-              <div
-                role="tabpanel"
-                class="tab-pane active"
-                id="impulse-responses"
-              ></div>
+                <div class="artist__content">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="impulse-responses"></div>
 
-              <div
-                role="tabpanel"
-                class="tab-pane"
-                id="impulse-responses-pro"
-              ></div>
-              <div role="tabpanel" class="tab-pane" id="custom">
-                <div
-                  style="
+                        <div role="tabpanel" class="tab-pane" id="impulse-responses-pro"></div>
+                        <div role="tabpanel" class="tab-pane" id="custom">
+                            <div style="
                     margin: 0 auto;
                     justify-content: center;
                     display: flex;
                     margin-top: 20px;
                     margin-bottom: 20px;
-                  "
-                >
-                  <input type="file" id="upload" />
-                  <button id="c-play-0" class="button-dark play">
+                  ">
+                                <input type="file" id="upload" />
+                                <button id="c-play-0" class="button-dark play">
                     <i class="ion-ios-play"></i>
                   </button>
-                  <button id="c-stop-0" class="button-light">Stop</button>
-                </div>
-                <div class="album__actions">
-                  <div class="slider-group">
-                    <div class="slider">
-                      <label for="c-volume-0">Volume</label>
-                      <input
-                        id="c-volume-0"
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="1"
-                        class="volume-slider"
-                      />
-                      <div class="slider-value">1</div>
+                                <button id="c-stop-0" class="button-light">Stop</button>
+                            </div>
+                            <div class="album__actions">
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="c-volume-0">Volume</label>
+                                        <input id="c-volume-0" type="range" min="0" max="1" step="0.01" value="1" class="volume-slider" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="c-mix-0" class="mix-label">Dry/Wet</label>
+                                        <input id="c-mix-0" type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider" />
+                                        <div class="slider-value">0.5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="samples">
+                            <div class="album__info__meta audio">
+                                <p style="margin-right: 10px;" class="album__name">Demo 1 (Dry)</p>
+                                <audio controls>
+                                <source src="./demos/demo_1_dry.wav" type="audio/ogg">
+                              Your browser does not support the audio element.
+                              </audio>
+                            </div>
+                            <hr />
+                            <div class="album__info__meta audio">
+                                <p style="margin-right: 10px;" class="album__name">Demo 1</p>
+                                <audio controls>
+                                <source src="./demos/demo_1.wav" type="audio/ogg">
+                              Your browser does not support the audio element.
+                              </audio>
+                            </div>
+                            <hr/>
+                            <div class="album__info__meta audio">
+                                <p style="margin-right: 10px;" class="album__name">Demo 2</p>
+                                <audio controls>
+                                <source src="./demos/demo_2_dry.wav" type="audio/ogg">
+                              Your browser does not support the audio element.
+                              </audio>
+                            </div>
+                            <hr />
+                            <div class="album__info__meta audio">
+                                <p style="margin-right: 10px;" class="album__name">Demo 2</p>
+                                <audio controls>
+                                <source src="./demos/demo_2.wav" type="audio/ogg">
+                              Your browser does not support the audio element.
+                              </audio>
+                            </div>
+                        </div>
                     </div>
-                    <div class="slider">
-                      <label for="c-mix-0" class="mix-label">Dry/Wet</label>
-                      <input
-                        id="c-mix-0"
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.5"
-                        class="mix-slider"
-                      />
-                      <div class="slider-value">0.5</div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <section class="current-track">
-      <div class="current-track__actions">
-        <a class="ion-ios-skipbackward"></a>
+        <div class="current-track__actions">
+            <a class="ion-ios-skipbackward"></a>
 
-                                <a class="ion-ios-play play"></a>
+            <a class="ion-ios-play play"></a>
 
-                                <a class="ion-ios-skipforward"></a>
-                    </div>
+            <a class="ion-ios-skipforward"></a>
+        </div>
 
-                    <div class="current-track__progress">
-                        <div class="current-track__progress__start">0:01</div>
+        <div class="current-track__progress">
+            <div class="current-track__progress__start">0:01</div>
 
-                        <div class="current-track__progress__bar">
-                            <div id="song-progress"></div>
-                        </div>
+            <div class="current-track__progress__bar">
+                <div id="song-progress"></div>
+            </div>
 
-                        <div class="current-track__progress__finish">3:07</div>
-                    </div>
+            <div class="current-track__progress__finish">3:07</div>
+        </div>
 
-                    <div class="current-track__options">
-                        <a href="#" class="lyrics">Lyrics</a>
+        <div class="current-track__options">
+            <a href="#" class="lyrics">Lyrics</a>
 
-                        <span class="controls">
+            <span class="controls">
           <a href="#" class="control">
             <i class="ion-navicon"></i>
           </a>
@@ -180,61 +192,21 @@
           <a href="#" class="control devices">
             <i class="ion-iphone"></i>
             <span>Devices Available</span>
-                        </a>
+            </a>
 
-                        <a href="#" class="control volume">
-                            <i class="ion-volume-high"></i>
+            <a href="#" class="control volume">
+                <i class="ion-volume-high"></i>
 
-                            <div id="song-volume"></div>
-                        </a>
-                        </span>
-                    </div>
+                <div id="song-volume"></div>
+            </a>
+            </span>
+        </div>
     </section>
     <script type="text/x-custom-template" id="template1">
         <div class="album">
             <div class="album__info">
                 <div class="album__info__art">
                     <img src="./img/impulses.jpeg">
-                </div>
-                <div class="album__info__meta">
-                    <div class="album__name">Bathroom</div>
-                    <p class="album__description">
-                    </p>
-                    <div class="album__actions">
-                        <button class="button-dark play play-button">
-                            <i class="ion-ios-play"></i>
-                          </button>
-                        <button class="button-light stop-button">
-                            Stop
-                          </button>
-                        <button type="button" data-toggle="collapse" aria-expanded="false" class="button-light effects effects-button">
-                            EFFECTS
-                          </button>
-                    </div>
-                </div>
-                <div class="collapse collapse-panel" aria-expanded="true">
-                    <div class="slider-group">
-                        <div class="slider">
-                            <label class="volume-label">Volume</label>
-                            <input type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
-                            <div class="slider-value">1</div>
-                        </div>
-                        <div class="slider">
-                            <label class="mix-label">Dry/Wet</label>
-                            <input type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider">
-                            <div class="slider-value">0.5</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr /> `
-    </script>
-    <script type="text/x-custom-template" id="template2">
-        <div class="album">
-            <div class="album__info">
-                <div class="album__info__art">
-                    <img src="./img/unorthodox.jpeg" alt="When It's Dark Out">
                 </div>
                 <div class="album__info__meta">
                     <div class="album__name">Bathroom</div>
@@ -270,6 +242,47 @@
         </div>
         <hr /> `
     </script>
+    <script type="text/x-custom-template" id="template2">
+        <div class="album">
+            <div class="album__info">
+                <div class="album__info__art">
+                    <img src="./img/profile.jpeg" alt="When It's Dark Out">
+                </div>
+                <div class="album__info__meta">
+                    <div class="album__name">Bathroom</div>
+                    <p class="album__description">
+                    </p>
+                    <div class="album__actions">
+                        <button class="button-dark play play-button">
+                        <i class="ion-ios-play"></i>
+                      </button>
+                        <button class="button-light stop-button">
+                        Stop
+                      </button>
+                        <button type="button" data-toggle="collapse" aria-expanded="false" class="button-light effects effects-button">
+                        EFFECTS
+                      </button>
+                    </div>
+                </div>
+                <div class="collapse collapse-panel" aria-expanded="true">
+                    <div class="slider-group">
+                        <div class="slider">
+                            <label class="volume-label">Volume</label>
+                            <input type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
+                            <div class="slider-value">1</div>
+                        </div>
+                        <div class="slider">
+                            <label class="mix-label">Dry/Wet</label>
+                            <input type="range" min="0" max="1" step="0.01" value="0.5" class="mix-slider">
+                            <div class="slider-value">0.5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr /> `
+    </script>
+
     <script src="./Pizzicato.js"></script>
     <script src="js/vendor/prism.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -280,6 +293,15 @@
     <script type="module" src="js/impulses.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/player.js"></script>
+    <script>
+        $(document).ready((function() {
+            $('#demo_1_dry').on('click', function() {
+
+                let audio = new Audio('./demos/demo_1_dry.wav');
+                audio.play();
+            });
+        }))
+    </script>
 </body>
 
 </html>
